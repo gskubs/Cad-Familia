@@ -1,5 +1,6 @@
 package dev.skbconsultoria.CadastroDeFamilia.Trabalhos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.skbconsultoria.CadastroDeFamilia.Familias.FamiliaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,7 @@ public class TrabalhoModel {
 
     //@OneToMany significa muitos familiares em uma mesma tarefa, usamos sempre no elemento que vc for precisar.
     @OneToMany(mappedBy = "trabalho")
+    @JsonIgnore
     private List<FamiliaModel> familia;
 
 
