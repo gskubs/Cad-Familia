@@ -1,0 +1,43 @@
+# Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.classpath
+.factorypath
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ
+.idea
+*.iml
+*.iws
+*.ipr
+
+### NetBeans ###
+
+/nbproject/private
+/nbbuild
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+
+.vscode/
+data/
+
+.env
+
+# Logs
+*.log
+
+# H2 Database
+*.mv.db
+*.trace.db
+
+# OS
+.DS_Store
+Thumbs.db
