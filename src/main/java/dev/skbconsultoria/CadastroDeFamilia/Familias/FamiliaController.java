@@ -31,11 +31,11 @@ public class FamiliaController {
         return familaService.listarFamilia();
     }
 
-    // MOSTRAR familiares por ID (READ)
-    @GetMapping("/todosID")
-    public String mostrarFamiliaPorId(){
-        return "Essa é minha familia por id";
-    }
+    // MOSTRAR familiares por ID (READ) é aqui que o user vai preencher o ID que ele quer buscar
+    @GetMapping("/todos/{id}")
+    public FamiliaModel listarFamiliaID(@PathVariable Long id){
+       return familaService.listarFamiliaID(id);
+           }
 
     //Alterar dados dos familiares (UPDATE) @PutMapping usado para alterar dados
     @PutMapping("/alterarID")
