@@ -1,15 +1,16 @@
 package dev.skbconsultoria.CadastroDeFamilia.Familias;
-
 import org.springframework.web.bind.annotation.*;
-
+import java.util.List;
 
 @RestController
 @RequestMapping
 public class FamiliaController {
 
+    private FamilaService familaService;
 
-
-
+    public FamiliaController(FamilaService familaService) {
+        this.familaService = familaService;
+    }
 
     @GetMapping("/boasvindas")
     public String boasVindas(){
@@ -18,7 +19,7 @@ public class FamiliaController {
 
     //VAMOS COMEÇAR NO BASICO NO CRUD
 
-    //Adicionar familiar (CREATE) posMapping para adicionar
+    //Adicionar familiar (CREATE) @PostMapping para adicionar
     @PostMapping("/criar")
     public String criarFamilia(){
         return "Familiar criado com sucesso";
@@ -26,8 +27,8 @@ public class FamiliaController {
 
     //MOSTRAR TODOS OS FAMILIARES (READ) @GetMapping é usado para mostrar um resultado
     @GetMapping("/todos")
-    public String mostrarFamilia(){
-        return "Essa é minha familia";
+    public List<FamiliaModel> listarFamilia(){
+        return familaService.listarFamilia();
     }
 
     // MOSTRAR familiares por ID (READ)
