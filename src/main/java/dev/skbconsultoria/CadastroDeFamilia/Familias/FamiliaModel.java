@@ -24,7 +24,7 @@ public class FamiliaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "nome")
     private String nome;
@@ -33,7 +33,7 @@ public class FamiliaModel {
     private String email;
 
     @Column(name = "idade")
-    private int idade;
+    private Integer idade;
 
     //@ManyToOne um familiar tem apenas uma unica tarefa, usamos sempre no elemento que vc for precisar.
     @ManyToOne

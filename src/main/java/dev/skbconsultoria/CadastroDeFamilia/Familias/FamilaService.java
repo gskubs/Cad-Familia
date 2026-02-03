@@ -27,5 +27,9 @@ public class FamilaService {
         return familaPorId.orElse(null);
     }
 
-
+    //Adicionar familiar tendo que passar todas as informações do banco de dados do FamiliaModel menos o ID que é
+    // gerado automaticamente, o INSERT do BD no JPA se chama SAVE
+    public FamiliaModel criarFamilia(FamiliaModel familia){
+        return familaRepository.save(familia);
+    }
 }
