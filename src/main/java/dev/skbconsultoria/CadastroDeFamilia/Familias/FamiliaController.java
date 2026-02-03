@@ -44,9 +44,10 @@ public class FamiliaController {
     }
 
     // Deletar familiar (DELETE) @DeleteMapping usado para deletar dados
-    @DeleteMapping("/deletarID")
-    public String deletarFamiliaPorId(){
-        return "Deletando familiar por id";
+    //Usar o @PathVariable sempre que precisa ser passado um dado para buscar o dado
+    @DeleteMapping("/deletar/{id}")
+    public void deletarFamiliarPorId(@PathVariable Long id){
+        familaService.deletarFamiliarPorId(id);
     }
 
 
