@@ -21,8 +21,8 @@ public class FamiliaController {
 
     //Adicionar familiar (CREATE) @PostMapping para adicionar ao BD dados
     @PostMapping("/criar")
-    public FamiliaModel criarFamilia(@RequestBody FamiliaModel  familiaModel){
-        return familaService.criarFamilia(familiaModel);
+    public FamiliaDTO criarFamilia(@RequestBody FamiliaDTO  familiaDTO){
+        return familaService.criarFamilia(familiaDTO);
     }
 
     //MOSTRAR TODOS OS FAMILIARES (READ) @GetMapping é usado para mostrar do BD um resultado

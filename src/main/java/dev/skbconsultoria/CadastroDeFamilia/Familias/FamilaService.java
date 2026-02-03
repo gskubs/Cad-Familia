@@ -9,6 +9,7 @@ import java.util.Optional;
 public class FamilaService {
 
     private FamilaRepository familaRepository;
+    private FamiliaMapper familiaMapper;
 
     //agora inicializar o construtor, somente usando a anotation @Autowired ou usar o construtor.
 
@@ -29,8 +30,10 @@ public class FamilaService {
 
     //Adicionar familiar tendo que passar todas as informações do banco de dados do FamiliaModel menos o ID que é
     // gerado automaticamente, o INSERT do BD no JPA se chama SAVE
-    public FamiliaModel criarFamilia(FamiliaModel familia){
-        return familaRepository.save(familia);
+    public FamiliaDTO criarFamilia(FamiliaDTO familiaDTO){
+        FamiliaModel familiaModel = new FamiliaMapper().map(familiaDTO);
+        familiaModel = familaRepository.save(familiaModel);
+        return familiaMapper.map(familiaModel);
     }
 
 
