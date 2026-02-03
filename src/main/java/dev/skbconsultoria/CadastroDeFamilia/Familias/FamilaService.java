@@ -32,12 +32,18 @@ public class FamilaService {
     public FamiliaModel criarFamilia(FamiliaModel familia){
         return familaRepository.save(familia);
     }
-<<<<<<< HEAD
-=======
+
 
     //Deletar Familiar - Sempre tem que ser VOID pois nao tem que retornar nada para o user
     public void deletarFamiliarPorId(Long id){
         familaRepository.deleteById(id);
     }
->>>>>>> db43ade (feat: Adiciona a rota de deleção do familiar por id)
+
+    //Atualizar Familiar - nesse caso preciso passar o ID para buscar mais o meu FamilaModel
+    public FamiliaModel atualizarFamilia(Long id, FamiliaModel familiaAtualizado) {
+        if (familaRepository.existsById(id)) { //Tenho que colocar um Se existir o ID que quero atualizar vai para o proximo
+            return familaRepository.save(familiaAtualizado); //que é aqui e atualiza o dado.
+        }
+        return null; //caso o contrario retornar null.
+    }
 }

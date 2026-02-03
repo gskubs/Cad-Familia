@@ -38,9 +38,11 @@ public class FamiliaController {
            }
 
     //Alterar dados dos familiares (UPDATE) @PutMapping usado para alterar dados
-    @PutMapping("/alterarID")
-    public String alterarFamiliarPorId(){
-        return "Alterar familiar por id";
+    //como o @PutMapping é uma mistura do PostMapping com o GetMapping, precicamos colocar a variavel
+    //@PathVariable para buscar dados nesse caso por ID e o RequestBody, pois precisamo buscar os dados que precisam ser alterados
+    @PutMapping("/alterar/{id}")
+    public FamiliaModel alterarFamiliarPorId(@PathVariable Long id, @RequestBody FamiliaModel familiaAtualizado){
+        return familaService.atualizarFamilia(id, familiaAtualizado);//Dessa maneira eu consigo fazer o update
     }
 
     // Deletar familiar (DELETE) @DeleteMapping usado para deletar dados
