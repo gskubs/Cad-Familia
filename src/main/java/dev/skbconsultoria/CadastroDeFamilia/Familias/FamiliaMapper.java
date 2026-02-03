@@ -15,7 +15,6 @@ public class FamiliaMapper {
                 familiaModel.setTrabalho(familiaDTO.getTrabalho());
 
                 return familiaModel;
-
         }
 
         public FamiliaDTO map(FamiliaModel familiaModel) {
