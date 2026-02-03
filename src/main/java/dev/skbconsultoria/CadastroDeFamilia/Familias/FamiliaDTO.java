@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class FamilaDTO {
+public class FamiliaDTO {
 
     private Long id;
     private String nome;
@@ -17,7 +17,5 @@ public class FamilaDTO {
     private Integer idade;
     private String rank;
     private TrabalhoModel trabalho;
-
-
 
 }
