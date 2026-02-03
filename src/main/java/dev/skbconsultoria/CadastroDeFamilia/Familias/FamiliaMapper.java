@@ -1,4 +1,7 @@
 package dev.skbconsultoria.CadastroDeFamilia.Familias;
 
-public class FamilaDTO {
+public class FamilaMapper {
+
+
+    
 }
