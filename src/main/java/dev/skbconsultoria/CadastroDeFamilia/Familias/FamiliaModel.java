@@ -29,6 +29,9 @@ public class FamiliaModel {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "rank")
+    private String rank;
+
     @Column(unique = true)//Falando que a coluna do e-mail é unica, não pode haver 2 e-mails iguais.
     private String email;
 
