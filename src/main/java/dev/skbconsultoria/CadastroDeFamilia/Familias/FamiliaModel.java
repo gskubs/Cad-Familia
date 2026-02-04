@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.ManyToAny;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor //Ele ja cria um construtor vazio de forma oculta graças ao Lombok
 @AllArgsConstructor //Ele ja cria automaticamente os construtores cheios automaticamente de forma oculta graças ao Lombok
 @Data //Ele ja cria automaticamente os getters e setters automaticamente de forma oculta graças ao Lombok
+@ToString(exclude = "trabalho")
 public class FamiliaModel {
 
 
